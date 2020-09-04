@@ -21,3 +21,7 @@ gem 'liquid-nested-sort'
 ```liquid
 {{ places | nested_sort_natural "address.street" }}
 ```
+
+## Thanks
+
+This is mostly based on @untra's work (https://github.com/untra).
