@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    liquid-nested-sort (0.1.0)
+    liquid-nested-sort (0.1.5)
       liquid (>= 4.0, < 5.0)
 
 GEM
