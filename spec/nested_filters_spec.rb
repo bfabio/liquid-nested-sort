@@ -26,16 +26,22 @@ describe NestedFilters do
     @collection = [@a, @b, @c, @d, @e]
   end
 
-  describe 'nested_sort_natural' do
+  describe 'nested_sort and nested_sort_natural' do
     context 'collection empty or nil' do
       it "returns an empty array when there's no property" do
         expect(nested_sort_natural([])).to eq([])
         expect(nested_sort_natural(nil)).to eq([])
+
+        expect(nested_sort([])).to eq([])
+        expect(nested_sort(nil)).to eq([])
       end
 
       it "returns an empty array when there's a property" do
         expect(nested_sort_natural([], 'property')).to eq([])
         expect(nested_sort_natural(nil, 'property')).to eq([])
+
+        expect(nested_sort([], 'property')).to eq([])
+        expect(nested_sort(nil, 'property')).to eq([])
       end
     end
 
@@ -63,6 +69,11 @@ describe NestedFilters do
         expect(nested_sort_natural(@collection, 'book.author')).to       eq([@e, @d, @a, @b, @c])
         expect(nested_sort_natural(@collection, 'movie.distributor')).to eq([@e, @c, @d, @a, @b])
         expect(nested_sort_natural(@collection, 'movie.title')).to       eq([@a, @b, @c, @d, @e])
+
+        expect(nested_sort(@collection, 'id')).to                eq([@e, @d, @c, @b, @a])
+        expect(nested_sort(@collection, 'book.author')).to       eq([@e, @d, @a, @b, @c])
+        expect(nested_sort(@collection, 'movie.distributor')).to eq([@e, @c, @d, @a, @b])
+        expect(nested_sort(@collection, 'movie.title')).to       eq([@a, @b, @c, @d, @e])
       end
     end
   end

@@ -76,6 +76,10 @@ module NestedFilters
       ary.sort do |a, b|
         LiquidUtils.nil_safe_compare(a, b)
       end
+    elsif property.include?('.') && LiquidUtils.nested_respond_to?(ary.first, property)
+      ary.sort do |a, b|
+        LiquidUtils.nil_safe_compare(LiquidUtils.nested_send(a, property), LiquidUtils.nested_send(b, property))
+      end
     elsif ary.all? { |el| el.respond_to?(:[]) }
       begin
         ary.sort { |a, b| LiquidUtils.nil_safe_compare(a[property], b[property]) }
