@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'liquid-nested-sort'
-  s.version = '0.1.1'
+  s.version = '0.1.4'
   s.date = '2020-09-03'
 
   s.author = 'Fabio Bonelli'
@@ -15,7 +15,8 @@ Gem::Specification.new do |s|
     "Liquid's sort and sort_natural don't support nested fields out of the box." \
     'This gems provides nested_sort and nester_sort_natural.'
 
-  s.files = ['lib/liquid_nested_sort.rb']
+  s.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r!^(spec)/!) }
+  s.require_paths = ['lib']
 
   s.add_runtime_dependency('liquid', ['>= 4.0', '< 5.0'])
   s.required_ruby_version = '~> 2.4'
