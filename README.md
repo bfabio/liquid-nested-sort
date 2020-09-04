@@ -2,7 +2,8 @@
 
 [![Gem Version](https://img.shields.io/gem/v/liquid-nested-sort.svg)](https://rubygems.org/gems/liquid-nested-sort)
 
-`sort` and `sort_natural` filters with nested fields support for Liquid
+`nested_sort` and `nested_sort_natural`, sort and sort_natural-like filters
+with nested fields support for Liquid.
 
 ## Installation
 
