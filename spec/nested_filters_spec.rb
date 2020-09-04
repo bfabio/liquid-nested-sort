@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'nested_filters'
+require 'liquid_nested_sort/nested_filters'
 
 describe NestedFilters do
   include NestedFilters
