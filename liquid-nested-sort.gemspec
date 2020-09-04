@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = 'liquid-nested-sort'
-  s.version = '0.1.4'
+  s.version = '0.1.5'
   s.date = '2020-09-03'
 
   s.author = 'Fabio Bonelli'
